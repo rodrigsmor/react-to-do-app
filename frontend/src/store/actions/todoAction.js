@@ -39,3 +39,10 @@ export const markAsPending = (todo) => {
             .then(resp => dispatch(search()))
     }
 }
+
+export const remove = (todo) => {
+    return dispatch => {
+        Axios.delete(`${URL}/${todo._id}`)
+            .then(resp => dispatch(search()));
+    }
+}
