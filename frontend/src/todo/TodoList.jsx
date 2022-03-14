@@ -6,7 +6,7 @@ const TodoList = props => {
     const renderRows = () => {
         const list = props.list || [];
 
-        return list.map(todo => (
+        return list.map((todo, id) => (
             <tr key={todo._id}>
                 <td className={ todo.done ? 'markedAsDone' : '' }>{ todo.description }</td>
                 <td>
